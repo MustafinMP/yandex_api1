@@ -25,7 +25,7 @@ class MyApplication(QMainWindow, Ui_MainWindow):
     def get_image(self):
         self.found = True
         # Получаем изображение по запросу, сохраняем его в файл
-        map_request = f"""http://static-maps.yandex.ru/1.x/?ll={self.xInp.text()},{self.yInp.text()}&spn={str(self.size * 0.0005)},{str(self.size * 0.0005)}&l=map"""
+        map_request = f"""http://static-maps.yandex.ru/1.x/?ll={self.xInp.text()},{self.yInp.text()}&spn={str(self.size * 0.0005)},{str(self.size * 0.0005)}&l=map&size=601,391"""
         response = requests.get(map_request)
 
         if not response:
