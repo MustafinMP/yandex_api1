@@ -1,5 +1,6 @@
 from design2 import Ui_MainWindow
 from PyQt5.QtGui import QPixmap
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QMainWindow
 import requests
 import os
@@ -43,6 +44,12 @@ class MyApplication(QMainWindow, Ui_MainWindow):
 
     def closeEvent(self, event):
         os.remove(self.map_file)
+
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key_PageUp:
+            self.size_up()
+        elif event.key() == Qt.Key_PageDown:
+            self.size_down()
 
     def size_up(self):
         if self.size > 5:
