@@ -54,7 +54,7 @@ class MyApplication(QMainWindow, Ui_MainWindow):
 
 
     def size_down(self):
-        if self.size < 150:
+        if self.size < 100:
             self.size += 5
             if self.found:
                 self.get_image()
